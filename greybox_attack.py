@@ -3,7 +3,7 @@ import torch.nn.functional as F
 import inspect
 from codebase import utils, setup
 
-#function to normalize images using cifar10 stats
+#function to normalise images using cifar10 stats
 def preprocess(x, mean_tensor, std_tensor):
     return utils.normalize(x, mean_tensor, std_tensor)
 
