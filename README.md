@@ -1,6 +1,6 @@
 # Adversarial Attacks on Deep Neural Networks
 
-A collection of adversarial attack implementations targeting CIFAR-10 image classifiers. Demonstrates grey-box attacks, universal perturbations, and adaptive attacks against randomized defences.
+A collection of adversarial attack implementations targeting CIFAR-10 image classifiers. Demonstrates grey-box attacks, universal perturbations, and adaptive attacks against randomised defences.
 
 ## Overview
 
@@ -15,7 +15,7 @@ A collection of adversarial attack implementations targeting CIFAR-10 image clas
 All attacks target a **VGG11 with Batch Normalization** (`vgg11_bn`) trained on CIFAR-10:
 - Clean accuracy: **87.22%** on test set
 - Input: 32×32×3 images, normalized with CIFAR-10 statistics
-- Classes: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck
+- Classes: aeroplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck
 
 ## Attack Implementations
 
@@ -51,7 +51,7 @@ Generates a **single perturbation** that causes all 100 images to be classified 
 - Momentum-based gradient accumulation (μ = 0.75)
 - Iterative refinement focusing on non-fooled samples
 - Step size decay for convergence
-- Early stopping when all images fooled
+- Early stopping when all images are fooled
 
 ```python
 uap = generate_UAPs(
@@ -67,7 +67,7 @@ uap = generate_UAPs(
 
 ### Adaptive Attack (`adaptive_attack.py`)
 
-Breaks a **randomized defence** that uses random cropping and majority voting. The defence (`RobustModel`) applies `RandomResizedCrop(scale=0.20-0.50)` with 21 votes.
+Breaks a **randomised defence** that uses random cropping and majority voting. The defence (`RobustModel`) applies `RandomResizedCrop(scale=0.20-0.50)` with 21 votes.
 
 **Constraints:** L∞ = 0.04 on 50 test images
 
@@ -117,7 +117,7 @@ All attacks use the **L∞ threat model**:
 - Grey-box & Adaptive: ε = 0.04 (~10/255)
 - Universal: ε = 0.06 (~15/255)
 
-Perturbations are applied to unnormalized images [0,1], then normalized before inference.
+Perturbations are applied to unnormalized images [0,1], then normalised before inference.
 
 ### Hyperparameters
 
