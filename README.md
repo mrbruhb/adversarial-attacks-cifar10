@@ -14,7 +14,7 @@ A collection of adversarial attack implementations targeting CIFAR-10 image clas
 
 All attacks target a **VGG11 with Batch Normalization** (`vgg11_bn`) trained on CIFAR-10:
 - Clean accuracy: **87.22%** on test set
-- Input: 32×32×3 images, normalized with CIFAR-10 statistics
+- Input: 32×32×3 images, normalised with CIFAR-10 statistics
 - Classes: aeroplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck
 
 ## Attack Implementations
@@ -33,7 +33,7 @@ Targeted attack where you **do not have direct access** to compute gradients on 
 
 ```python
 adv_x = generate_attack(
-    x_arr=images,              # [100, 3, 32, 32] unnormalized
+    x_arr=images,              # [100, 3, 32, 32] unnormalised
     y_arr=true_labels,         # Original labels
     adv_target_arr=(y_arr+1)%10,  # Target: next class
     adv_l_inf=0.04,
@@ -101,7 +101,7 @@ adv_x = generate_attack(
 
 **Dataset:** CIFAR-10 test set
 - 100 correctly-classified images selected (seed=375)
-- Unnormalized [0,1] for perturbation, normalized for inference
+- Unnormalised [0,1] for perturbation, normalised for inference
 
 **Normalization:**
 ```python
@@ -117,7 +117,7 @@ All attacks use the **L∞ threat model**:
 - Grey-box & Adaptive: ε = 0.04 (~10/255)
 - Universal: ε = 0.06 (~15/255)
 
-Perturbations are applied to unnormalized images [0,1], then normalised before inference.
+Perturbations are applied to unnormalised images [0,1], then normalised before inference.
 
 ### Hyperparameters
 
@@ -136,7 +136,7 @@ numpy
 ```
 
 **Codebase dependencies:**
-- `codebase.utils.normalize()` — CIFAR-10 normalization
+- `codebase.utils.normalise()` — CIFAR-10 normalization
 - `codebase.setup.CIFAR10_MEAN/STD` — Dataset statistics
 - `codebase.classifiers.vgg` — VGG model definitions
 - `codebase.model_trainer` — Checkpoint loading
