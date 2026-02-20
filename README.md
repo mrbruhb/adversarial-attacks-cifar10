@@ -12,7 +12,7 @@ A collection of adversarial attack implementations targeting CIFAR-10 image clas
 
 ## Target Model
 
-All attacks target a **VGG11 with Batch Normalization** (`vgg11_bn`) trained on CIFAR-10:
+All attacks target a **VGG11 with Batch Normalisation** (`vgg11_bn`) trained on CIFAR-10:
 - Clean accuracy: **87.22%** on test set
 - Input: 32×32×3 images, normalised with CIFAR-10 statistics
 - Classes: aeroplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck
@@ -103,7 +103,7 @@ adv_x = generate_attack(
 - 100 correctly-classified images selected (seed=375)
 - Unnormalised [0,1] for perturbation, normalised for inference
 
-**Normalization:**
+**Normalisation:**
 ```python
 CIFAR10_MEAN = [0.4914, 0.4822, 0.4465]
 CIFAR10_STD = [0.2023, 0.1994, 0.2010]
@@ -136,7 +136,7 @@ numpy
 ```
 
 **Codebase dependencies:**
-- `codebase.utils.normalise()` — CIFAR-10 normalization
+- `codebase.utils.normalise()` — CIFAR-10 normalisation
 - `codebase.setup.CIFAR10_MEAN/STD` — Dataset statistics
 - `codebase.classifiers.vgg` — VGG model definitions
 - `codebase.model_trainer` — Checkpoint loading
@@ -164,6 +164,6 @@ numpy
 - [Universal Adversarial Perturbations](https://arxiv.org/abs/1610.08401) — Moosavi-Dezfooli et al., 2017
 - [Obfuscated Gradients Give a False Sense of Security](https://arxiv.org/abs/1802.00420) — Athalye et al., 2018 (EOT)
 
-## License
+## Licence
 
 MIT
