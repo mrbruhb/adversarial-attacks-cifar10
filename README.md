@@ -8,7 +8,7 @@ A collection of adversarial attack implementations targeting CIFAR-10 image clas
 |--------|------|--------------|--------------|----------|
 | **Grey-box PGD** | Targeted | Grey-box | VGG11-BN | Adversarial examples without direct gradient access |
 | **Universal Perturbation** | Image-agnostic | White-box | VGG11-BN | Single perturbation fooling multiple inputs |
-| **Adaptive Attack** | Defence-aware | White-box | VGG11-BN + RandomCrop defence | Breaking stochastic/randomized defences |
+| **Adaptive Attack** | Defence-aware | White-box | VGG11-BN + RandomCrop defence | Breaking stochastic/randomised defences |
 
 ## Target Model
 
